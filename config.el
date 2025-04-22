@@ -110,7 +110,9 @@
 
       (:when (modulep! :checkers syntax)
         :desc "Go to the previous error"        "M-p"        #'flycheck-previous-error
-        :desc "Go to the next error"            "M-n"        #'flycheck-next-error))
+        :desc "Go to the next error"            "M-n"        #'flycheck-next-error)
+
+      "<f5>"   #'deadgrep)
 
 (map! :leader
       :desc "Resume the last avy action"        "C-j"        #'avy-resume
@@ -178,3 +180,6 @@
                              nil
                              :foreground (doom-color 'green)
                              :background (doom-color 'green))))
+
+(use-package! deadgrep
+  :defer)
