@@ -123,7 +123,8 @@
                 :desc "Remove a transclusion"           "L r"  #'org-transclusion-remove
                 :desc "Add a transclusion"              "L a"  #'org-transclusion-add
                 :desc "Source file of a transclusion"   "L s"  #'org-transclusion-open-source
-                :desc "Transclusion from a link"        "L l"  #'org-transclusion-make-from-link)))
+                :desc "Transclusion from a link"        "L l"  #'org-transclusion-make-from-link
+                :desc "Org Transclusion mode"           "L t"  #'org-transclusion-mode)))
 
 (use-package! org-noter
   :defer
