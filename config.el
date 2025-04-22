@@ -74,8 +74,9 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
-(map! :desc "Jump to a character"               "C-:"        #'avy-goto-char-2
-      :desc "Go to a line by avy"               "M-g g"      #'avy-goto-line
+(map! (:when (modulep! :config default)
+        :desc "Jump to a character"               "C-:"        #'avy-goto-char-2
+        :desc "Go to a line by avy"               "M-g g"      #'avy-goto-line)
 
       (:when (modulep! :checkers syntax)
         :desc "Go to the previous error"        "M-p"        #'flycheck-previous-error
