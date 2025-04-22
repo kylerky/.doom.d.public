@@ -73,6 +73,12 @@
                             odt
                             org))
 
+(setq eglot-workspace-configuration
+        (plist-put eglot-workspace-configuration
+                   ':rust-analyzer
+                   '(:rustc (:source "discover")
+                            :check (:command "clippy"))))
+
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
 ;;
@@ -222,3 +228,17 @@
   :config
   (orderless-define-completion-style +orderless-with-initialism
     (orderless-matching-styles '(orderless-initialism orderless-literal orderless-regexp))))
+
+(use-package! rust-mode
+  :defer
+  :after flycheck
+  :hook
+  ((rust-mode . eglot-ensure))
+  :custom
+  ((rust-mode-treesitter-derive t)))
+
+(use-package! rust-ts-mode
+  :defer
+  :after flycheck
+  :hook
+  ((rust-ts-mode . eglot-ensure)))
