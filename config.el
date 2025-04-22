@@ -188,3 +188,25 @@
 
 (use-package! vlf
   :init (require 'vlf-setup))
+
+(use-package! super-save
+  :custom ((auto-save-default nil)
+           (super-save-auto-save-when-idle t)
+           (super-save-triggers
+              '(ace-window
+                  treemacs-select-window
+                        persp-switch-to-buffer*
+                        persp-switch-to-buffer
+                  other-window
+                  windmove-up
+                  windmove-down
+                  windmove-left
+                  windmove-right
+                  next-buffer
+                  previous-buffer
+                        find-file))
+           (super-save-hook-triggers
+              '(find-file-hook
+                  mouse-leave-buffer-hook
+                  focus-out-hook)))
+  :config (super-save-mode 1))

@@ -50,3 +50,4 @@
 (package! org-transclusion)
 (package! deadgrep)
 (package! vlf)
+(package! super-save)
