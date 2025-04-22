@@ -109,8 +109,8 @@
         :desc "Go to a line by avy"               "M-g g"      #'avy-goto-line)
 
       (:when (modulep! :checkers syntax)
-        :desc "Go to the previous error"        "M-p"        #'flycheck-previous-error
-        :desc "Go to the next error"            "M-n"        #'flycheck-next-error)
+        :desc "Go to the previous error"        "M-p"          #'flycheck-previous-error
+        :desc "Go to the next error"            "M-n"          #'flycheck-next-error)
 
       "<f5>"   #'deadgrep)
 
