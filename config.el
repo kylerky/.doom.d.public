@@ -242,3 +242,12 @@
   :after flycheck
   :hook
   ((rust-ts-mode . eglot-ensure)))
+
+(use-package! citar
+  :defer
+  :custom
+  ((org-cite-global-bibliography '("~/Notes/references.bib"))
+   (citar-bibliography org-cite-global-bibliography)
+   (org-cite-insert-processor 'citar)
+   (org-cite-follow-processor 'citar)
+   (org-cite-activate-processor 'citar)))
