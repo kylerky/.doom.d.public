@@ -116,6 +116,7 @@
 
 (map! :leader
       :desc "Resume the last avy action"        "C-j"        #'avy-resume
+      :desc "Toggle repeat mode"                "r"          #'repeat-mode
       (:prefix ("l" . "<localleader>")
                (:after org-transclusion
                 :map org-mode-map
