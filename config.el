@@ -117,6 +117,12 @@
 (map! :leader
       :desc "Resume the last avy action"        "C-j"        #'avy-resume
       :desc "Toggle repeat mode"                "r"          #'repeat-mode
+
+      (:after consult
+       :prefix "s"
+       :desc "Consult flycheck errors"          "!"        #'consult-flycheck
+       :desc "Consult the outline"              "g"        #'consult-outline)
+
       (:prefix ("l" . "<localleader>")
                (:after org-transclusion
                 :map org-mode-map
