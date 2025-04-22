@@ -40,8 +40,38 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/Notes")
+(setq org-directory (expand-file-name "~/Notes"))
+(setq org-agenda-files (expand-file-name "agenda_files" org-directory))
 
+(setq holiday-hebrew-holidays nil)
+(setq holiday-bahai-holidays nil)
+(setq holiday-islamic-holidays nil)
+(setq holiday-christian-holidays nil)
+
+(setq org-modules '(ol-bbdb
+                    ol-bibtex
+                    org-crypt
+                    ol-docview
+                    ol-doi
+                    ol-eww
+                    ol-gnus
+                    org-habit
+                    org-id
+                    ol-info
+                    org-inlinetask
+                    ol-irc
+                    ol-mhe
+                    org-protocol
+                    ol-rmail
+                    org-tempo
+                    ol-w3m))
+(setq org-export-backends '(md
+                            ascii
+                            html
+                            icalendar
+                            latex
+                            odt
+                            org))
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
@@ -83,4 +113,68 @@
         :desc "Go to the next error"            "M-n"        #'flycheck-next-error))
 
 (map! :leader
-      :desc "Resume the last avy action"        "C-j"        #'avy-resume)
+      :desc "Resume the last avy action"        "C-j"        #'avy-resume
+      (:prefix ("l" . "<localleader>")
+               (:after org-transclusion
+                :map org-mode-map
+                :desc "Remove a transclusion"           "L r"  #'org-transclusion-remove
+                :desc "Add a transclusion"              "L a"  #'org-transclusion-add
+                :desc "Source file of a transclusion"   "L s"  #'org-transclusion-open-source
+                :desc "Transclusion from a link"        "L l"  #'org-transclusion-make-from-link)))
+
+(use-package! org-noter
+  :defer
+  :custom
+  ((org-noter-notes-search-path '("~/Sync/notes"))))
+
+(use-package! citar-embark
+  :after (citar embark)
+  :config (citar-embark-mode))
+
+(use-package! citar-org-roam
+  :after (citar org-roam)
+  :config (citar-org-roam-mode))
+
+(use-package! org-roam
+  :defer
+  :custom
+  ((org-roam-directory (expand-file-name "roam" org-directory))
+   (org-roam-capture-templates
+    '(("m" "main" plain "%?"
+       :if-new
+       (file+head
+        "main/${slug}.org" "#+title: ${title}\n")
+       :immediate-finish t
+       :unnarrowed t)
+      ("r" "reference" plain "%?"
+       :if-new
+       (file+head
+        "reference/${slug}.org" "#+title: ${title}\n#+filetags: :reference:\n")
+       :immediate-finish t
+       :unnarrowed t)
+      ("p" "project" plain "%?"
+       :if-new
+       (file+head
+        "project/${slug}.org" "#+title: ${title}\n#+filetags: :project:\n")
+       :immediate-finish t
+       :unnarrowed t))))
+  :config
+  (progn (require 'org-roam-protocol)
+         (require 'org-roam-export)
+         (org-roam-db-autosync-mode)))
+
+(use-package! org-transclusion
+  :after org
+  :custom
+  ((org-transclusion-extensions '(org-transclusion-src-lines
+                                  org-transclusion-font-lock
+                                  org-transclusion-indent-mode)))
+  :config
+  (progn (set-face-attribute 'org-transclusion-fringe
+                             nil
+                             :foreground (doom-color 'orange)
+                             :background (doom-color 'orange))
+         (set-face-attribute 'org-transclusion-source-fringe
+                             nil
+                             :foreground (doom-color 'green)
+                             :background (doom-color 'green))))
