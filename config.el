@@ -216,3 +216,9 @@
                   mouse-leave-buffer-hook
                   focus-out-hook)))
   :config (super-save-mode 1))
+
+(use-package! orderless
+  :defer
+  :config
+  (orderless-define-completion-style +orderless-with-initialism
+    (orderless-matching-styles '(orderless-initialism orderless-literal orderless-regexp))))
