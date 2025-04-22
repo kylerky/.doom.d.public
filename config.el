@@ -185,3 +185,6 @@
 
 (use-package! deadgrep
   :defer)
+
+(use-package! vlf
+  :init (require 'vlf-setup))

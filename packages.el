@@ -49,3 +49,4 @@
 ;; (unpin! t)
 (package! org-transclusion)
 (package! deadgrep)
+(package! vlf)
