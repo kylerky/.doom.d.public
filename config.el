@@ -119,6 +119,9 @@
         :desc "Go to the previous error"        "M-p"          #'flycheck-previous-error
         :desc "Go to the next error"            "M-n"          #'flycheck-next-error)
 
+      (:when (modulep! :completion ivy)
+        :desc "Swiper"                          "C-s"          #'swiper)
+
       "<f5>"   #'deadgrep)
 
 (map! :leader
