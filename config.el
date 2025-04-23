@@ -48,6 +48,16 @@
 (setq holiday-islamic-holidays nil)
 (setq holiday-christian-holidays nil)
 
+(after! calendar
+  (setq calendar-chinese-all-holidays-flag t
+        calendar-date-display-form calendar-european-date-display-form
+        diary-date-forms diary-european-date-forms))
+
+(setq gnus-init-file "~/.config/doom/gnus.el")
+
+(after! project
+  (setq project-vc-extra-root-markers '(".poject.el")))
+
 (setq org-modules '(ol-bbdb
                     ol-bibtex
                     org-crypt
