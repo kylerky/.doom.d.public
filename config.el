@@ -124,6 +124,7 @@
 (map! :leader
       :desc "Resume the last avy action"        "C-j"        #'avy-resume
       :desc "Toggle repeat mode"                "r"          #'repeat-mode
+      :desc "Aider menu"                        "'"          #'aider-transient-menu
 
       (:after consult
        :prefix "s"
@@ -262,3 +263,8 @@
            (ledger-init-file-name nil)
            (ledger-mode-should-check-version nil)
            (ledger-post-amount-alignment-column 64)))
+
+(use-package! aider
+  :defer
+  :custom
+  ((aider-args '("--model" "deepseek/deepseek-reasoner"))))

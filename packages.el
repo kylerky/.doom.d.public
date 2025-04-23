@@ -52,3 +52,6 @@
 (package! vlf)
 (package! super-save)
 (package! rust-mode)
+(package! aider
+  :recipe (:host github
+           :repo "tninja/aider.el"))
