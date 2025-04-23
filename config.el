@@ -122,6 +122,10 @@
       (:when (modulep! :completion ivy)
         :desc "Swiper"                          "C-s"          #'swiper)
 
+      (:when (modulep! :ui tabs)
+        :desc "Tab backward"                    "C-<prior>"    #'centaur-tabs-backward
+        :desc "Tab forward"                     "C-<next>"     #'centaur-tabs-forward)
+
       "<f5>"   #'deadgrep)
 
 (map! :leader
