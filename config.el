@@ -236,7 +236,12 @@
   :defer
   :config
   (orderless-define-completion-style +orderless-with-initialism
-    (orderless-matching-styles '(orderless-initialism orderless-literal orderless-regexp))))
+    (orderless-matching-styles '(orderless-initialism orderless-literal orderless-regexp)))
+  (setq completion-category-defaults nil
+        completion-category-overrides '((file (styles +orderless-with-initialism partial-completion))
+                                        (command (styles +orderless-with-initialism partial-completion))
+                                        (variable (styles +orderless-with-initialism partial-completion))
+                                        (symbol (styles +orderless-with-initialism partial-completion)))))
 
 (use-package! rust-mode
   :defer
