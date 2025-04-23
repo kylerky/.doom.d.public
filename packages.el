@@ -60,3 +60,4 @@
 (package! emacs-w3m)
 (package! shimbun)
 (package! piem)
+(package! treesit-auto)

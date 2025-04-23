@@ -279,3 +279,9 @@
                    :url "https://lore.kernel.org/lkml/"
                    :address "linux-kernel@vger.kernel.org"
                    :listid "linux-kernel.vger.kernel.org"))))
+
+(use-package! treesit-auto
+  :custom
+  (treesit-auto-install 'prompt)
+  :config
+  (global-treesit-auto-mode 1))
