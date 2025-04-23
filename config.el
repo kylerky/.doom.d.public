@@ -268,3 +268,11 @@
   :defer
   :custom
   ((aider-args '("--model" "deepseek/deepseek-reasoner"))))
+
+(use-package! piem
+  :defer
+  :custom
+  ((piem-inboxes '("lkml"
+                   :url "https://lore.kernel.org/lkml/"
+                   :address "linux-kernel@vger.kernel.org"
+                   :listid "linux-kernel.vger.kernel.org"))))

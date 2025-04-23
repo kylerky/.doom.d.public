@@ -55,3 +55,4 @@
 (package! aider
   :recipe (:host github
            :repo "tninja/aider.el"))
+(package! piem)
