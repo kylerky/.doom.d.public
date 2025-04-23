@@ -73,11 +73,12 @@
                             odt
                             org))
 
-(setq eglot-workspace-configuration
-        (plist-put eglot-workspace-configuration
-                   ':rust-analyzer
-                   '(:rustc (:source "discover")
-                            :check (:command "clippy"))))
+(after! eglot
+   (setq eglot-workspace-configuration
+                    (plist-put eglot-workspace-configuration
+                              ':rust-analyzer
+                              '(:rustc (:source "discover")
+                                :check (:command "clippy")))))
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
