@@ -252,3 +252,13 @@
    (org-cite-insert-processor 'citar)
    (org-cite-follow-processor 'citar)
    (org-cite-activate-processor 'citar)))
+
+(use-package! ledger-mode
+  :config (progn
+            (add-to-list
+             'auto-mode-alist
+             '("\\.\\(h?ledger\\|journal\\|j\\)$" . ledger-mode)))
+  :custom ((ledger-binary-path "hledger")
+           (ledger-init-file-name nil)
+           (ledger-mode-should-check-version nil)
+           (ledger-post-amount-alignment-column 64)))
