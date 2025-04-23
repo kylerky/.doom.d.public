@@ -55,4 +55,8 @@
 (package! aider
   :recipe (:host github
            :repo "tninja/aider.el"))
+(package! apel)
+(package! flim)
+(package! emacs-w3m)
+(package! shimbun)
 (package! piem)
