@@ -148,6 +148,11 @@
         :desc "Tab backward"                    "C-<prior>"    #'centaur-tabs-backward
         :desc "Tab forward"                     "C-<next>"     #'centaur-tabs-forward)
 
+      (:when (modulep! :lang racket)
+        :after racket-mode
+        :map racket-smart-open-bracket-mode-map
+        :desc "Smart open bracket"              "C-0"            #'racket-smart-open-bracket)
+
       "<f5>"   #'deadgrep)
 
 (map! :leader
@@ -345,3 +350,10 @@
   (treesit-auto-install 'prompt)
   :config
   (global-treesit-auto-mode 1))
+
+(use-package! racket-mode
+  :defer
+  :config
+  (keymap-unset racket-smart-open-bracket-mode-map "[" 'remove)
+  :hook
+  ((racket-mode . racket-smart-open-bracket-mode)))
