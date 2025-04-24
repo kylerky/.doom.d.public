@@ -97,8 +97,6 @@
 (after! ob-hledger
   (add-to-list 'org-src-lang-modes '("hledger" . ledger)))
 
-(toggle-truncate-lines 1)
-
 (after! browse-url
   (setq browse-url-handlers '(("." . browse-url-firefox))))
 
