@@ -94,6 +94,9 @@
   (setq ispell-extra-args
         (append ispell-extra-args '("--lang=en_GB" "--camel-case"))))
 
+(after! ob-hledger
+  (add-to-list 'org-src-lang-modes '("hledger" . ledger)))
+
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
 ;;
