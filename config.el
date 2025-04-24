@@ -97,6 +97,8 @@
 (after! ob-hledger
   (add-to-list 'org-src-lang-modes '("hledger" . ledger)))
 
+(toggle-truncate-lines 1)
+
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
 ;;
