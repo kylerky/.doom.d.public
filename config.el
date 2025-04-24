@@ -253,23 +253,31 @@
 (use-package! super-save
   :custom ((auto-save-default nil)
            (super-save-auto-save-when-idle t)
+           (super-save-all-buffers t)
            (super-save-triggers
-              '(ace-window
-                  treemacs-select-window
-                        persp-switch-to-buffer*
-                        persp-switch-to-buffer
-                  other-window
-                  windmove-up
-                  windmove-down
-                  windmove-left
-                  windmove-right
-                  next-buffer
-                  previous-buffer
-                        find-file))
+            '(ace-window
+              treemacs-select-window
+              persp-switch-to-buffer
+              +vertico/switch-workspace-buffer
+              switch-to-buffer
+              consult-buffer
+              other-window
+              other-frame
+              other-window-prefix
+              other-frame-prefix
+              windmove-up
+              windmove-down
+              windmove-left
+              windmove-right
+              next-buffer
+              previous-buffer
+              centaur-tabs-forward
+              centaur-tabs-backward
+              magit-status))
            (super-save-hook-triggers
-              '(find-file-hook
-                  mouse-leave-buffer-hook
-                  focus-out-hook)))
+            '(find-file-hook
+              mouse-leave-buffer-hook
+              focus-out-hook)))
   :config (super-save-mode 1))
 
 (use-package! orderless
