@@ -355,3 +355,10 @@
   (keymap-unset racket-smart-open-bracket-mode-map "[" 'remove)
   :hook
   ((racket-mode . racket-smart-open-bracket-mode)))
+
+(use-package! flycheck-eglot
+  :after (flycheck eglot)
+  :custom
+  (flycheck-eglot-exclusive nil)
+  :config
+  (global-flycheck-eglot-mode 1))
