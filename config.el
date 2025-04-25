@@ -141,7 +141,7 @@
         :desc "Go to the previous flymake error"  "M-P"          #'flymake-goto-prev-error
         :desc "Go to the next flymake error"      "M-N"          #'flymake-goto-next-error)
 
-      (:when (modulep! :completion ivy)
+      (:after swiper
         :desc "Swiper"                          "C-s"          #'swiper)
 
       (:when (modulep! :ui tabs)
