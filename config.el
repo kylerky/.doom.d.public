@@ -143,8 +143,7 @@
         :desc "Go to the previous flymake error"  "M-P"          #'flymake-goto-prev-error
         :desc "Go to the next flymake error"      "M-N"          #'flymake-goto-next-error)
 
-      (:after swiper
-        :desc "Swiper"                          "C-s"          #'swiper)
+      :desc "Swiper"                              "C-s"          #'swiper
 
       (:when (modulep! :ui tabs)
         :desc "Tab backward"                    "C-<prior>"    #'centaur-tabs-backward
