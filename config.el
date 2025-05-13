@@ -85,13 +85,6 @@
                             odt
                             org))
 
-(after! eglot
-   (setq eglot-workspace-configuration
-                    (plist-put eglot-workspace-configuration
-                              ':rust-analyzer
-                              '(:rustc (:source "discover")
-                                :check (:command "clippy")))))
-
 (after! ispell
   (setq ispell-extra-args
         (append ispell-extra-args '("--lang=en_GB" "--camel-case"))))
