@@ -140,7 +140,9 @@
 
       (:when (modulep! :ui tabs)
         :desc "Tab backward"                    "C-<prior>"    #'centaur-tabs-backward
-        :desc "Tab forward"                     "C-<next>"     #'centaur-tabs-forward)
+        :desc "Move tab to the left"            "C-S-<prior>"  #'centaur-tabs-move-current-tab-to-left
+        :desc "Tab forward"                     "C-<next>"     #'centaur-tabs-forward
+        :desc "Move tab to the right"           "C-S-<next>"   #'centaur-tabs-move-current-tab-to-right)
 
       (:when (modulep! :lang racket)
         :after racket-mode
