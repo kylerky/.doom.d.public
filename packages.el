@@ -61,3 +61,4 @@
 (package! shimbun)
 (package! piem)
 (package! treesit-auto)
+(package! guix)
