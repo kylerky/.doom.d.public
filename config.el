@@ -214,21 +214,24 @@
     '(("m" "main" plain "%?"
        :if-new
        (file+head
-        "main/${slug}.org" "#+title: ${title}\n")
+        "public/main/${slug}.org" "#+title: ${title}\n")
        :immediate-finish t
        :unnarrowed t)
       ("r" "reference" plain "%?"
        :if-new
        (file+head
-        "reference/${slug}.org" "#+title: ${title}\n#+filetags: :reference:\n")
+        "public/reference/${slug}.org" "#+title: ${title}\n#+filetags: :reference:\n")
        :immediate-finish t
        :unnarrowed t)
       ("p" "project" plain "%?"
        :if-new
        (file+head
-        "project/${slug}.org" "#+title: ${title}\n#+filetags: :project:\n")
+        "public/project/${slug}.org" "#+title: ${title}\n#+filetags: :project:\n")
        :immediate-finish t
-       :unnarrowed t))))
+       :unnarrowed t)))
+   (org-roam-dailies-capture-templates
+    '(("d" "default" entry "* %?" :target
+       (file+head "%<%Y>/%<%Y-%m-%d>.org" "#+title: %<%Y-%m-%d>\n")))))
   :config
   (progn (require 'org-roam-protocol)
          (require 'org-roam-export)
@@ -313,6 +316,7 @@
 
 (use-package! citar
   :defer
+  :after org
   :custom
   ((org-cite-global-bibliography '("~/Notes/references.bib"))
    (citar-bibliography org-cite-global-bibliography)
