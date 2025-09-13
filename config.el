@@ -45,6 +45,7 @@
 (setq org-directory (expand-file-name "~/Notes"))
 (setq org-agenda-files (expand-file-name "agenda_files" org-directory))
 
+(setq holiday-general-holidays nil)
 (setq holiday-hebrew-holidays nil)
 (setq holiday-bahai-holidays nil)
 (setq holiday-islamic-holidays nil)
