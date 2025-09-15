@@ -99,7 +99,9 @@
 (add-hook! python-base-mode #'eglot-ensure)
 
 (after! org
-  (setq org-log-into-drawer t))
+  (setq org-log-into-drawer t)
+  (setq org-format-latex-options
+        (plist-put org-format-latex-options :scale 2.0)))
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
