@@ -216,6 +216,7 @@
   :defer
   :custom
   ((org-roam-directory (expand-file-name "roam" org-directory))
+   (org-roam-dailies-directory "private/daily/")
    (org-roam-capture-templates
     '(("m" "main" plain "%?"
        :if-new
