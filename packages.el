@@ -60,6 +60,5 @@
 (package! emacs-w3m)
 (package! shimbun)
 (package! piem)
-(package! treesit-auto)
 (package! guix)
 (package! ob-mermaid)

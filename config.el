@@ -361,12 +361,6 @@
                    :address "linux-kernel@vger.kernel.org"
                    :listid "linux-kernel.vger.kernel.org"))))
 
-(use-package! treesit-auto
-  :custom
-  (treesit-auto-install 'prompt)
-  :config
-  (global-treesit-auto-mode 1))
-
 (use-package! racket-mode
   :defer
   :config
