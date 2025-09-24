@@ -314,15 +314,17 @@
                                         (variable (styles +orderless-with-initialism partial-completion))
                                         (symbol (styles +orderless-with-initialism partial-completion)))))
 
-(use-package! rust-mode
-  :defer
-  :after flycheck
-  :hook
-  ((rust-mode . eglot-ensure))
-  :custom
-  ((rust-mode-treesitter-derive t)))
+;; (use-package! rust-mode
+;;   :defer
+;;   :after flycheck
+;;   :hook
+;;   ((rust-mode . eglot-ensure))
+;;   :custom
+;;   ((rust-mode-treesitter-derive t)))
 
 (use-package! rust-ts-mode
+  :init
+  (add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-ts-mode))
   :defer
   :after flycheck
   :hook
