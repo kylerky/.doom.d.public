@@ -376,3 +376,5 @@
   (flycheck-eglot-exclusive nil)
   :config
   (global-flycheck-eglot-mode 1))
+
+(use-package! windresize)

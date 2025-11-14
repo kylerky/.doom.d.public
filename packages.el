@@ -62,3 +62,4 @@
 (package! piem)
 (package! guix)
 (package! ob-mermaid)
+(package! windresize)
