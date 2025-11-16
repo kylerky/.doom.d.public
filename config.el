@@ -378,3 +378,5 @@
   (global-flycheck-eglot-mode 1))
 
 (use-package! windresize)
+
+(load (expand-file-name "tramp.el" doom-user-dir))
