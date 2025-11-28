@@ -242,6 +242,12 @@
        (file+head
         "private/main/${slug}.org" "#+title: ${title}\n")
        :immediate-finish t
+       :unnarrowed t)
+      ("bp" "private project" plain "%?"
+       :if-new
+       (file+head
+        "private/project/${slug}.org" "#+title: ${title}\n#+filetags: :project:\n")
+       :immediate-finish t
        :unnarrowed t)))
    (org-roam-dailies-capture-templates
     '(("d" "default" entry "* %?" :target
