@@ -340,7 +340,7 @@
   :defer
   :after org
   :custom
-  ((org-cite-global-bibliography '("~/Notes/references.bib"))
+  ((org-cite-global-bibliography '("~/Notes/roam/public/reference/references.bib"))
    (citar-bibliography org-cite-global-bibliography)
    (org-cite-insert-processor 'citar)
    (org-cite-follow-processor 'citar)
