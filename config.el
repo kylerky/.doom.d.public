@@ -388,7 +388,8 @@
 (use-package! agent-shell
   :config
   (progn (setq agent-shell-google-gemini-command '("npx" "@google/gemini-cli" "--experimental-acp"))
-         (setq agent-shell-qwen-command '("npx" "@qwen-code/qwen-code" "--experimental-acp"))))
+         (setq agent-shell-qwen-command '("npx" "@qwen-code/qwen-code" "--experimental-acp"))
+         (setq agent-shell-file-completion-enabled t)))
 
 (use-package! envrc
   :config
