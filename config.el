@@ -385,4 +385,9 @@
 
 (use-package! windresize)
 
+(use-package! envrc
+  :config
+  (progn (setq envrc-supported-tramp-methods '("ssh" "sshx"))
+         (setq envrc-remote t)))
+
 (load (expand-file-name "tramp.el" doom-user-dir))
