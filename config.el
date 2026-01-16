@@ -273,9 +273,6 @@
                              :foreground (doom-color 'green)
                              :background (doom-color 'green))))
 
-(use-package! deadgrep
-  :defer)
-
 (use-package! vlf
   :init (require 'vlf-setup))
 

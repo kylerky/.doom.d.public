@@ -48,7 +48,6 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;; (unpin! t)
 (package! org-transclusion)
-(package! deadgrep)
 (package! vlf)
 (package! super-save)
 (package! rust-mode)
