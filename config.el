@@ -283,8 +283,6 @@
            (super-save-triggers
             '(ace-window
               treemacs-select-window
-              persp-switch-to-buffer
-              +vertico/switch-workspace-buffer
               switch-to-buffer
               consult-buffer
               other-window
