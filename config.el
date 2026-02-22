@@ -372,6 +372,33 @@
          (setq agent-shell-qwen-command '("npx" "@qwen-code/qwen-code" "--experimental-acp"))
          (setq agent-shell-file-completion-enabled t)))
 
+(use-package! auto-dark
+  :defer t
+  :init
+  ;; Configure themes
+  (setq! auto-dark-themes '((doom-nord-aurora) (doom-nord-light)))
+  ;; Disable doom's theme loading mechanism (just to make sure)
+  (setq! doom-theme nil)
+  ;; Declare that all themes are safe to load.
+  ;; Be aware that setting this variable may have security implications if you
+  ;; get tricked into loading untrusted themes (via auto-dark-mode or manually).
+  ;; See the documentation of custom-safe-themes for details.
+  ;; (setq! custom-safe-themes t)
+  ;; Enable auto-dark-mode at the right point in time.
+  ;; This is inspired by doom-ui.el. Using server-after-make-frame-hook avoids
+  ;; issues with an early start of the emacs daemon using systemd, which causes
+  ;; problems with the DBus connection that auto-dark mode relies upon.
+  (defun eed/auto-dark-init-h ()
+    (auto-dark-mode)
+    (remove-hook 'server-after-make-frame-hook #'eed/auto-dark-init-h)
+    (remove-hook 'after-init-hook #'eed/auto-dark-init-h))
+  (let ((hook (if (daemonp)
+                  'server-after-make-frame-hook
+                'after-init-hook)))
+    ;; Depth -95 puts this before doom-init-theme-h, which sounds like a good
+    ;; idea, if only for performance reasons.
+    (add-hook hook #'eed/auto-dark-init-h -95)))
+
 (use-package! envrc
   :config
   (progn (setq envrc-supported-tramp-methods '("ssh" "sshx"))
