@@ -86,8 +86,6 @@
                             odt
                             org))
 
-(add-to-list 'default-frame-alist '(undecorated . t))
-
 (after! ispell
   (setq ispell-extra-args
         (append ispell-extra-args '("--lang=en_GB" "--camel-case"))))
