@@ -363,21 +363,9 @@
   (global-flycheck-eglot-mode 1))
 
 (after! eglot
-  (add-to-list 'eglot-server-programs '((js-mode typescript-mode js-ts-mode typescript-ts-mode) . (eglot-deno "deno" "lsp")))
+  (add-to-list 'eglot-server-programs
+               `((javascript-mode javascript-ts-mode typescript-mode typescript-ts-mode) . ("deno" "lsp"))))
 
-  (defclass eglot-deno (eglot-lsp-server) ()
-    :documentation "A custom class for deno lsp.")
-
-  (cl-defmethod eglot-initialization-options ((server eglot-deno))
-    "Passes through required deno initialization options"
-    (list
-     :enable t
-     :unstable t
-     :typescript
-     (:inlayHints (:variableTypes
-                   (:enabled t))
-                  (:parameterTypes
-                   (:enabled t))))))
 
 (use-package! windresize)
 
