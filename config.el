@@ -157,6 +157,10 @@
         :map racket-smart-open-bracket-mode-map
         :desc "Smart open bracket"              "C-0"            #'racket-smart-open-bracket)
 
+      (:when (modulep! :term vterm)
+        :map vterm-mode-map
+        :desc ""                                "C-]"            #'vterm-copy-mode)
+
       "<f5>"   #'deadgrep)
 
 (map! :leader
