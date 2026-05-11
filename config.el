@@ -405,4 +405,7 @@
   (progn (setq envrc-supported-tramp-methods '("ssh" "sshx"))
          (setq envrc-remote t)))
 
+(use-package! pi-coding-agent
+  :init (defalias 'pi 'pi-coding-agent))
+
 (load (expand-file-name "tramp.el" doom-user-dir))
