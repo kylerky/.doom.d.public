@@ -61,4 +61,3 @@
 (package! windresize)
 (package! agent-shell)
 (package! auto-dark)
-(package! pi-coding-agent)
