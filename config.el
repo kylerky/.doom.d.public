@@ -362,7 +362,9 @@
 
 (after! eglot
   (add-to-list 'eglot-server-programs
-               `((javascript-mode javascript-ts-mode typescript-mode typescript-ts-mode) . ("deno" "lsp"))))
+               `((javascript-mode javascript-ts-mode typescript-mode typescript-ts-mode) . ("deno" "lsp")))
+  (add-to-list 'eglot-server-programs
+               `((python-mode python-ts-mode) . ("ty" "server"))))
 
 
 (use-package! windresize)
