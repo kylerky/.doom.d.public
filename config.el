@@ -361,10 +361,12 @@
   (global-flycheck-eglot-mode 1))
 
 (after! eglot
-  (add-to-list 'eglot-server-programs
-               `((javascript-mode javascript-ts-mode typescript-mode typescript-ts-mode) . ("deno" "lsp")))
-  (add-to-list 'eglot-server-programs
-               `((python-mode python-ts-mode) . ("ty" "server"))))
+  (set-eglot-client! '(javascript-mode javascript-ts-mode typescript-mode typescript-ts-mode)
+                     '("deno" "lsp")
+                     '("typescript-language-server" "--stdio"))
+  (set-eglot-client! '(python-mode python-ts-mode)
+                     '("ty" "server")
+                     '("ruff" "server")))
 
 
 (use-package! windresize)
