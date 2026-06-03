@@ -59,5 +59,4 @@
 (package! guix)
 (package! ob-mermaid)
 (package! windresize)
-(package! agent-shell)
 (package! auto-dark)
