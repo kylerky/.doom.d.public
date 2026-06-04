@@ -87,8 +87,7 @@
                             org))
 
 (after! ispell
-  (setq ispell-extra-args
-        (append ispell-extra-args '("--lang=en_GB" "--camel-case"))))
+  (setq ispell-dictionary "en_GB"))
 
 (after! ob-hledger
   (add-to-list 'org-src-lang-modes '("hledger" . ledger)))
