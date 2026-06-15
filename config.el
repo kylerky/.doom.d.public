@@ -367,6 +367,8 @@
                      '("ty" "server")
                      '("ruff" "server")))
 
+(use-package! msgpack)
+(use-package! tramp-rpc)
 
 (use-package! windresize)
 

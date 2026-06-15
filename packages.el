@@ -60,3 +60,5 @@
 (package! ob-mermaid)
 (package! windresize)
 (package! auto-dark)
+(package! msgpack)
+(package! tramp-rpc :recipe (:host github :repo "ArthurHeymans/emacs-tramp-rpc" :files ("lisp/*.el")))
