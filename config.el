@@ -369,6 +369,11 @@
 
 (use-package! msgpack)
 (use-package! tramp-rpc)
+(setq vterm-tramp-shells
+      '(("ssh" login-shell)
+        ("scp" login-shell)
+        ("docker" "/bin/sh")
+        ("rpc" login-shell)))
 
 (use-package! windresize)
 
