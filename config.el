@@ -368,6 +368,13 @@
                      '("ruff" "server")))
 
 (use-package! msgpack)
+
+(defconst const-usr-bin "/usr/bin")
+(defconst const-elvish  "elvish")
+(after! vterm
+  (when (file-exists-p! const-elvish const-usr-bin)
+    (setq vterm-shell (expand-file-name const-elvish const-usr-bin))))
+
 (use-package! tramp-rpc)
 (setq vterm-tramp-shells
       '(("ssh" login-shell)
