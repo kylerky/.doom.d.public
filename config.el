@@ -207,7 +207,7 @@
 (use-package! org-noter
   :defer
   :custom
-  ((org-noter-notes-search-path '("~/Sync/notes"))))
+  ((org-noter-notes-search-path '("~/Notes/noter"))))
 
 (use-package! citar-embark
   :after (citar embark)
