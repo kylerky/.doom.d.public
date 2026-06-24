@@ -182,9 +182,7 @@
         "M-t"  #'dirvish-layout-toggle
         "M-c"  #'dirvish-setup-menu
         "M-e"  #'dirvish-emerge-menu
-        "M-j"  #'dirvish-fd-jump)
-
-      "<f5>"   #'deadgrep)
+        "M-j"  #'dirvish-fd-jump))
 
 (map! :leader
       :desc "Resume the last avy action"        "C-j"        #'avy-resume
