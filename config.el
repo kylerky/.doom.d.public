@@ -171,9 +171,9 @@
         "y"    #'dirvish-yank-menu
         "N"    #'dirvish-narrow
         "["    #'dirvish-history-last
-        "h"    #'dirvish-history-jump ; remapped `describe-mode'
-        "s"    #'dirvish-quicksort ; remapped `dired-sort-toggle-or-edit'
-        "v"    #'dirvish-vc-menu   ; remapped `dired-view-file'
+        "h"    #'dirvish-history-jump   ; remapped `describe-mode'
+        "s"    #'dirvish-quicksort      ; remapped `dired-sort-toggle-or-edit'
+        "v"    #'dirvish-vc-menu        ; remapped `dired-view-file'
         "TAB"  #'dirvish-subtree-toggle
         "M-f"  #'dirvish-history-go-forward
         "M-b"  #'dirvish-history-go-backward
@@ -182,7 +182,11 @@
         "M-t"  #'dirvish-layout-toggle
         "M-c"  #'dirvish-setup-menu
         "M-e"  #'dirvish-emerge-menu
-        "M-j"  #'dirvish-fd-jump))
+        "M-j"  #'dirvish-fd-jump)
+
+      (:when (modulep! :editor multiple-cursors)
+        "C->"  #'mc/mark-next-like-this
+        "C-<"  #'mc/mark-previous-like-this))
 
 (map! :leader
       :desc "Resume the last avy action"        "C-j"        #'avy-resume
@@ -200,7 +204,10 @@
                 :desc "Add a transclusion"              "L a"  #'org-transclusion-add
                 :desc "Source file of a transclusion"   "L s"  #'org-transclusion-open-source
                 :desc "Transclusion from a link"        "L l"  #'org-transclusion-make-from-link
-                :desc "Org Transclusion mode"           "L t"  #'org-transclusion-mode)))
+                :desc "Org Transclusion mode"           "L t"  #'org-transclusion-mode))
+
+      (:when (modulep! :editor multiple-cursors)
+        "C-<"  #'mc/mark-all-like-this))
 
 (use-package! org-noter
   :defer
