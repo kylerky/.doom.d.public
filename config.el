@@ -375,6 +375,10 @@
                      '("ty" "server")
                      '("ruff" "server")))
 
+(use-package! apheleia
+  :custom
+  ((apheleia-remote-algorithm 'remote)))
+
 (use-package! msgpack)
 
 (defconst const-usr-bin "/usr/bin")
