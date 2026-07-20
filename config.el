@@ -379,6 +379,15 @@
   :custom
   ((apheleia-remote-algorithm 'remote)))
 
+(use-package! indent-bars
+  :config
+  (setq
+   indent-bars-pattern "."
+   indent-bars-width-frac 0.3
+   indent-bars-pad-frac 0.35
+   indent-bars-color-by-depth nil
+   indent-bars-highlight-current-depth '(:face default :blend 0.35)))
+
 (use-package! msgpack)
 
 (defconst const-usr-bin "/usr/bin")
