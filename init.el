@@ -29,9 +29,9 @@
        vertico           ; the search engine of the future
 
        :ui
+       dashboard    ; a nifty splash screen for Emacs
        ;;deft              ; notational velocity for Emacs
        doom              ; what makes DOOM look the way it does
-       doom-dashboard    ; a nifty splash screen for Emacs
        doom-quit         ; DOOM quit-message prompts when you quit Emacs
        ;; (emoji +unicode)  ; 🙂
        hl-todo           ; highlight TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW
@@ -78,9 +78,10 @@
 
        :term
        eshell            ; the elisp shell that works everywhere
+       (ghostel +everywhere)
        ;;shell             ; simple shell REPL for Emacs
        ;;term              ; basic terminal emulator for Emacs
-       vterm             ; the best terminal emulation in Emacs
+       ;; vterm             ; the best terminal emulation in Emacs
 
        :checkers
        (syntax +icons)              ; tasing you for every semicolon you forget
@@ -90,13 +91,14 @@
        :tools
        ansible
        biblio            ; Writes a PhD for you (citation needed)
-       ;;collab            ; buffers with friends
+       (collab +tunnel)            ; buffers with friends
        debugger          ; FIXME stepping through code, to help you add bugs
        direnv
        docker
-       ;;editorconfig      ; let someone else argue about tabs vs spaces
+       editorconfig      ; let someone else argue about tabs vs spaces
        ;;ein               ; tame Jupyter notebooks with emacs
        (eval +overlay)     ; run code, run (also, repls)
+       ;;llm
        (lookup +dictionary +docsets)              ; navigate your code and its documentation
        (lsp +eglot)               ; M-x vscode
        (magit +forge)             ; a git porcelain for Emacs

@@ -325,6 +325,12 @@
                                         (variable (styles +orderless-with-initialism partial-completion))
                                         (symbol (styles +orderless-with-initialism partial-completion)))))
 
+(use-package! ghostel)
+
+(use-package! crdt
+  :config
+  (setq crdt-use-tuntox 'confirm))
+
 (use-package! citar
   :defer
   :after org
