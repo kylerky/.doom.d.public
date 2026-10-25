@@ -56,6 +56,8 @@
 (package! emacs-w3m)
 (package! shimbun)
 (package! piem)
+
+(package! flycheck-eglot)
 (package! guix)
 (package! ob-mermaid)
 (package! windresize)
