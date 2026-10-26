@@ -374,12 +374,9 @@
   (global-flycheck-eglot-mode 1))
 
 (after! eglot
-  (set-eglot-client! '(javascript-mode javascript-ts-mode typescript-mode typescript-ts-mode)
-                     '("deno" "lsp")
-                     '("typescript-language-server" "--stdio"))
-  (set-eglot-client! '(python-mode python-ts-mode)
-                     '("ty" "server")
-                     '("ruff" "server")))
+  (set-eglot-client! '(js-mode js-ts-mode typescript-mode typescript-ts-mode tsx-ts-mode)
+                     '("rass" "ts")
+                     '("typescript-language-server" "--stdio")))
 
 (use-package! apheleia
   :custom
