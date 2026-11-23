@@ -374,7 +374,9 @@
   (global-flycheck-eglot-mode 1))
 
 (after! eglot
-  (set-eglot-client! '(js-mode js-ts-mode typescript-mode typescript-ts-mode tsx-ts-mode)
+  (set-eglot-client! '((typescript-mode :language-id "typescript")
+                       (typescript-ts-mode :language-id "typescript")
+                       (tsx-ts-mode :language-id "typescriptreact"))
                      '("rass" "ts")
                      '("typescript-language-server" "--stdio")))
 
